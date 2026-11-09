@@ -1,0 +1,9 @@
+# Render deploy (one of the plan's options; Fly.io is the alternative).
+# In Render: New > Web Service > connect this repo. It reads this file.
+# Free tier sleeps when idle — fine for Phase 0; /health wakes it.
+services:
+  - type: web
+    name: ai-transition-portfolio
+    env: docker
+    plan: free
+    healthCheckPath: /health
